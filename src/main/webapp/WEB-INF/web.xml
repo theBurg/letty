@@ -1,0 +1,51 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+    
+  <display-name>Archetype Created Web Application</display-name>
+  
+    <servlet>
+        <servlet-name>jersey</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+             <param-name>jersey.config.server.provider.packages</param-name>
+             <param-value>burg.rest</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>jersey</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+  
+    <!--pages-->
+        <servlet>
+            <servlet-name>pages</servlet-name>
+            <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+            <init-param> 
+                <param-name>jersey.config.server.provider.packages</param-name>
+                <param-value>rs.pages</param-value>
+            </init-param>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>pages</servlet-name>
+            <url-pattern>/static/*</url-pattern>
+        </servlet-mapping>
+    <!--db-->
+        <servlet>
+            <servlet-name>rest</servlet-name>
+            <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+            <init-param> 
+                <param-name>jersey.config.server.provider.packages</param-name>
+                <param-value>rs.db</param-value>
+            </init-param>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>rest</servlet-name>
+            <url-pattern>/db/*</url-pattern>
+        </servlet-mapping>
+</web-app>
