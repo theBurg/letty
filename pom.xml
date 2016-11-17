@@ -178,7 +178,8 @@
               </executions>
               <configuration>
                  <revisionOnScmFailure>true</revisionOnScmFailure>
-                 <format>{0,number}</format> 
+                 <format>{0,number}</format>
+                 <buildNumberPropertiesFileLocation>${basedir}/src/main/webapp/builderNumber.properties</buildNumberPropertiesFileLocation>
                  <items> 
                     <item>buildNumber</item>
                  </items>
